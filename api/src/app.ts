@@ -3,16 +3,20 @@ require('dotenv').config();
 import Joi from 'joi';
 import cors from 'cors';
 import express from 'express';
+import todosRoutes from './to-dos/routes';
+import addUserToRequest from './shared/middlewares/add-user-to-request';
 import { Environment } from './shared/model/environment';
+
+validateEnvVariables();
 
 const app = express();
 const port = process.env.APP_PORT;
 
-validateEnvVariables();
-
 app.disable('x-powered-by');
 app.use(cors());
 app.use(express.json());
+app.use(addUserToRequest);
+app.use(todosRoutes);
 
 export const server = app.listen(port, () => {
   console.log(`API initialized on port ${port}!`);
