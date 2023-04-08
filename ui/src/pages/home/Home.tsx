@@ -5,6 +5,9 @@ import ToDoCreateForm from './ToDoCreateForm';
 import ToDosContextProvider from './shared/contexts/ToDosContextProvider';
 
 const useClasses = createUseStyles({
+  h1: {
+    fontSize: 28,
+  },
   container: {
     width: 500,
     marginTop: 50,
@@ -19,6 +22,8 @@ export default function Section() {
   return (
     <ToDosContextProvider>
       <main className={classes.container}>
+        <h1 className={classes.h1}>My Tasks</h1>
+
         <ToDoCreateForm />
         <ToDoList />
       </main>
