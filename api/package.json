@@ -4,7 +4,8 @@
     "build": "tsc",
     "start": "node ./dist/src/app.js",
     "start:local": "npx nodemon",
-    "prettify": "npx prettier --write ./src"
+    "prettify": "npx prettier --write ./src",
+    "db:migrations": "npx knex --knexfile src/shared/database/knexFile.ts migrate:latest"
   },
   "dependencies": {
     "cors": "^2.8.5",
