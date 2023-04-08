@@ -1,5 +1,5 @@
 import React from 'react';
 
-export default function LogIn() {
+export default function SignUp() {
   return <>TO DO</>;
 }
