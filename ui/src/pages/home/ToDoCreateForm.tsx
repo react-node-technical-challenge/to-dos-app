@@ -24,7 +24,7 @@ const useClasses = createUseStyles({
 export default function ToDoCreateForm() {
   const classes = useClasses();
   const { addToDo } = useToDos();
-  const [title, setTitle] = useState<string>();
+  const [title, setTitle] = useState<string>('');
 
   return (
     <section className={classes.container}>
