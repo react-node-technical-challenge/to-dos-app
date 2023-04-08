@@ -9,9 +9,15 @@ const useClasses = createUseStyles({
   },
   input: {
     width: '100%',
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingTop: 5,
+    paddingBottom: 4,
   },
   button: {
     marginLeft: 15,
+    width: 75,
+    cursor: 'pointer',
   },
 });
 
@@ -24,6 +30,7 @@ export default function ToDoCreateForm() {
     <section className={classes.container}>
       <input
         value={title}
+        placeholder='Example: tidy up the house'
         className={classes.input}
         onChange={(event: ChangeEvent<HTMLInputElement>) => {
           setTitle(event.target.value);
