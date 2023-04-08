@@ -14,7 +14,7 @@ export default function useToDos() {
         method: 'POST',
         path: '/to-dos',
         body: { title },
-      }).then((id: number) => {
+      }).then(({ id }: { id: number }) => {
         setToDos(
           (toDos as ToDo[]).concat([
             {
