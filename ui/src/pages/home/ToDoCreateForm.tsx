@@ -30,14 +30,17 @@ export default function ToDoCreateForm() {
     <section className={classes.container}>
       <input
         value={title}
-        placeholder='Example: tidy up the house'
+        placeholder="Example: tidy up the house"
         className={classes.input}
         onChange={(event: ChangeEvent<HTMLInputElement>) => {
           setTitle(event.target.value);
         }}
       />
       <button
-        onClick={() => addToDo(title as string)}
+        onClick={() => {
+          addToDo(title as string);
+          setTitle('');
+        }}
         disabled={!title}
         className={classes.button}
       >
