@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/46922193/230734963-40f2409a-f420-4fd4-9575-684dad30e0f1.gif" alt="alt text">
+</p>
+
 A lot of improvements could be done, both from the technical and product point of view, but should be enough for you to get a sense of how I code and structure things :)
 
 Other considerations:
@@ -8,4 +12,3 @@ Other considerations:
 * The routes/controllers could've directly called the repository layer instead of passing through a service. However, I tend to do it like this even if the service doesn't do anything else than calling the repository because my experience says that the sooner or the later there will be more logic. In other words, I like to leave it prepared.
 * I didn't overcomplicate the folder structure given the size of the project (for example, using _Clean Architecture_)
 * There are no tests. Not because I don't usually write them, but because it was not mentioned and this is not a real project.
-
