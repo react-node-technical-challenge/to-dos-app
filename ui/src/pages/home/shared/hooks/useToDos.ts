@@ -36,8 +36,8 @@ export default function useToDos() {
     },
     markToDoAsCompleted: (id: number) => {
       makeRequest({
-        method: 'PATCH',
-        path: '/to-dos/completed',
+        method: 'PUT',
+        path: `/to-dos/${id}/completed`,
       }).then(() => {
         setToDos(
           (toDos as ToDo[]).map((toDo) => {
@@ -46,6 +46,23 @@ export default function useToDos() {
               : {
                   ...toDo,
                   completed: true,
+                };
+          })
+        );
+      });
+    },
+    markToDoAsUncompleted: (id: number) => {
+      makeRequest({
+        method: 'PUT',
+        path: `/to-dos/${id}/uncompleted`,
+      }).then(() => {
+        setToDos(
+          (toDos as ToDo[]).map((toDo) => {
+            return toDo.id !== id
+              ? toDo
+              : {
+                  ...toDo,
+                  completed: false,
                 };
           })
         );

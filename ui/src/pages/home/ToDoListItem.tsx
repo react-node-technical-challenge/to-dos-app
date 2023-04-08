@@ -1,6 +1,7 @@
 import React from 'react';
-import { ToDo } from './shared/model/toDo';
 import { createUseStyles } from 'react-jss';
+import { ToDo } from './shared/model/toDo';
+import useToDos from './shared/hooks/useToDos';
 
 const useClasses = createUseStyles({
   grid: {
@@ -13,6 +14,18 @@ const useClasses = createUseStyles({
 
 export default function Section({ toDo }: { toDo: ToDo }) {
   const classes = useClasses();
+  const { markToDoAsCompleted, markToDoAsUncompleted } = useToDos();
 
-  return <>{toDo.title}</>;
+  return (
+    <>
+      <input
+        type="checkbox"
+        checked={toDo.completed}
+        onClick={() =>
+          toDo.completed ? markToDoAsUncompleted(toDo.id) : markToDoAsCompleted(toDo.id)
+        }
+      />
+      {toDo.title}
+    </>
+  );
 }
