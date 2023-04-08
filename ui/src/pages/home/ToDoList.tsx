@@ -10,8 +10,6 @@ const useClasses = createUseStyles({
   },
   listItem: {
     listStyleType: 'none',
-    paddingTop: 15,
-    paddingBottom: 15,
     borderBottomWidth: 1,
     borderBottomStyle: 'solid',
     borderBottomColor: colors.grey1,

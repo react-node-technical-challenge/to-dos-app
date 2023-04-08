@@ -26,10 +26,10 @@ export default function useToDos() {
         );
       });
     },
-    removeToDo: (toDo: ToDo) => {
+    deleteToDo: (toDo: ToDo) => {
       makeRequest({
         method: 'DELETE',
-        path: '/to-dos',
+        path: `/to-dos/${toDo.id}`,
       }).then(() => {
         setToDos((toDos as ToDo[]).filter(({ id }) => id !== toDo.id));
       });
