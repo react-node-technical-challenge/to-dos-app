@@ -14,7 +14,8 @@ const useClasses = createUseStyles({
   },
   checkbox: {
     '-webkit-transform': 'scale(1.5)',
-    marginRight: 20,
+    marginRight: 15,
+    cursor: 'pointer'
   },
   titleWhenCompleted: {
     textDecoration: 'line-through',
