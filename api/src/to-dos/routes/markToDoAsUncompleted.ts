@@ -18,7 +18,7 @@ router.put('/to-dos/:id/uncompleted', async (request: Request, response: Respons
   const validationResult = schema.validate(id);
 
   if (!!validationResult.error) {
-    return response.status(StatusCode.ClientErrorUnauthorized).send({
+    return response.status(StatusCode.ClientErrorBadRequest).send({
       error: validationResult.error.message,
     });
   }

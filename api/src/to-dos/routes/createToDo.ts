@@ -17,7 +17,7 @@ router.post('/to-dos', async (request: Request, response: Response<OutputDto>) =
   const validationResult = schema.validate(toDoToCreate);
 
   if (!!validationResult.error) {
-    return response.status(StatusCode.ClientErrorUnauthorized).send({
+    return response.status(StatusCode.ClientErrorBadRequest).send({
       error: validationResult.error.message,
     });
   }
