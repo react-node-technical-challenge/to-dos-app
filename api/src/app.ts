@@ -1,8 +1,9 @@
 require('dotenv').config();
 
-import Joi from 'joi'M
+import Joi from 'joi';
 import cors from 'cors';
 import express from 'express';
+import { Environment } from './shared/model/environment';
 
 const app = express();
 const port = process.env.APP_PORT;
@@ -19,7 +20,7 @@ export const server = app.listen(port, () => {
 
 function validateEnvVariables(): void {
   const schema = Joi.object({
-    ENV: Joi.string().required(),
+    ENV: Joi.valid(...Object.values(Environment)).required(),
     APP_PORT: Joi.number().required(),
     DATABASE_HOST: Joi.string().not().empty().required(),
     DATABASE_PORT: Joi.number().not().empty().required(),
