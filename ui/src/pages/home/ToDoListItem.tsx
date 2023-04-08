@@ -41,7 +41,7 @@ export default function Section({ toDo }: { toDo: ToDo }) {
       <div>
         <input
           type="checkbox"
-          checked={toDo.completed}
+          defaultChecked={toDo.completed}
           className={classes.checkbox}
           onClick={() =>
             toDo.completed ? markToDoAsUncompleted(toDo.id) : markToDoAsCompleted(toDo.id)
