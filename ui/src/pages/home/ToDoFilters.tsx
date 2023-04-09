@@ -10,7 +10,7 @@ const useClasses = createUseStyles({
     display: 'grid',
     gridTemplateColumns: 'repeat(3, 1fr)',
     gridColumnGap: 5,
-    marginTop: 15
+    marginTop: 20
   },
   listItem: {
     listStyleType: 'none',

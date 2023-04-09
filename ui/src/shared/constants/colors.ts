@@ -4,6 +4,7 @@ export const colors = {
   brown: '#653d31',
   grey1: '#eee',
   grey2: '#323230',
+  grey3: '#aaa',
   primaryBackground: '#fff',
   secondaryBackground: '#efece5',
 };

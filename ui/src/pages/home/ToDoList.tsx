@@ -14,6 +14,11 @@ const useClasses = createUseStyles({
     borderBottomStyle: 'solid',
     borderBottomColor: colors.grey1,
   },
+  noTasksMessage: {
+    textAlign: 'center',
+    marginTop: 150,
+    color: colors.grey3,
+  },
 });
 
 export default function ToDoList() {
@@ -22,13 +27,18 @@ export default function ToDoList() {
 
   return (
     <ul className={classes.list}>
-      {visibleToDos?.map((toDo) => {
-        return (
-          <li className={classes.listItem} key={toDo.id}>
-            <ToDoListItem toDo={toDo} />
-          </li>
-        );
-      })}
+      {!!visibleToDos?.length &&
+        visibleToDos.map((toDo) => {
+          return (
+            <li className={classes.listItem} key={toDo.id}>
+              <ToDoListItem toDo={toDo} />
+            </li>
+          );
+        })}
+
+      {!visibleToDos?.length && (
+        <p className={classes.noTasksMessage}>There are no tasks</p>
+      )}
     </ul>
   );
 }
