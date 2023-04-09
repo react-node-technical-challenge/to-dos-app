@@ -1,6 +1,7 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import ToDoList from './ToDoList';
+import ToDoFilters from './ToDoFilters';
 import ToDoCreateForm from './ToDoCreateForm';
 import ToDosContextProvider from './shared/contexts/ToDosContextProvider';
 
@@ -9,7 +10,7 @@ const useClasses = createUseStyles({
     fontSize: 28,
   },
   container: {
-    width: 500,
+    width: 650,
     marginTop: 50,
     marginLeft: 'auto',
     marginRight: 'auto',
@@ -25,6 +26,7 @@ export default function Section() {
         <h1 className={classes.h1}>My Tasks</h1>
 
         <ToDoCreateForm />
+        <ToDoFilters />
         <ToDoList />
       </main>
     </ToDosContextProvider>

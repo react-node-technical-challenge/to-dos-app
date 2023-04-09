@@ -1,14 +1,13 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { ToDo } from '../model/toDo';
 import { useApi } from '../../../../shared/hooks/useApi';
 import { ToDosContext } from '../contexts/ToDosContext';
 
-export default function useToDos() {
+export default function useToDosManager() {
   const { makeRequest } = useApi();
   const { toDos, setToDos } = useContext(ToDosContext);
 
   return {
-    toDos,
     addToDo: (title: string) => {
       makeRequest({
         method: 'POST',

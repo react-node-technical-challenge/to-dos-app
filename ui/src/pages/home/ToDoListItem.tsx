@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { createUseStyles } from 'react-jss';
 import { ToDo } from './shared/model/toDo';
 import { colors } from '../../shared/constants/colors';
-import useToDos from './shared/hooks/useToDos';
+import useToDosManager from './shared/hooks/useToDosManager';
 
 const useClasses = createUseStyles({
   container: {
@@ -10,12 +10,12 @@ const useClasses = createUseStyles({
     alignContent: 'center',
     justifyContent: 'space-between',
     paddingTop: 15,
-    paddingBottom: 15
+    paddingBottom: 15,
   },
   checkbox: {
     '-webkit-transform': 'scale(1.5)',
     marginRight: 15,
-    cursor: 'pointer'
+    cursor: 'pointer',
   },
   titleWhenCompleted: {
     textDecoration: 'line-through',
@@ -23,14 +23,14 @@ const useClasses = createUseStyles({
   delete: {
     color: colors.red,
     cursor: 'pointer',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
 });
 
 export default function Section({ toDo }: { toDo: ToDo }) {
   const classes = useClasses();
   const [showOptionToDelete, setShowOptionToDelete] = useState<boolean>();
-  const { markToDoAsCompleted, markToDoAsUncompleted, deleteToDo } = useToDos();
+  const { markToDoAsCompleted, markToDoAsUncompleted, deleteToDo } = useToDosManager();
 
   return (
     <div

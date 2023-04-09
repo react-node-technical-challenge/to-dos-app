@@ -1,7 +1,7 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { colors } from '../../shared/constants/colors';
-import useToDos from './shared/hooks/useToDos';
+import useToDosFilters from './shared/hooks/useToDosFilters';
 import ToDoListItem from './ToDoListItem';
 
 const useClasses = createUseStyles({
@@ -18,11 +18,11 @@ const useClasses = createUseStyles({
 
 export default function ToDoList() {
   const classes = useClasses();
-  const { toDos } = useToDos();
+  const { visibleToDos } = useToDosFilters();
 
   return (
     <ul className={classes.list}>
-      {toDos?.map((toDo) => {
+      {visibleToDos?.map((toDo) => {
         return (
           <li className={classes.listItem} key={toDo.id}>
             <ToDoListItem toDo={toDo} />

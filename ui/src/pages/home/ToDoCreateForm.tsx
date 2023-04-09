@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useState } from 'react';
 import { createUseStyles } from 'react-jss';
-import useToDos from './shared/hooks/useToDos';
+import useToDos from './shared/hooks/useToDosManager';
 
 const useClasses = createUseStyles({
   container: {

@@ -1,5 +1,6 @@
 import React, { ReactElement, useEffect, useState } from 'react';
 import { ToDo } from '../model/toDo';
+import { Filter } from '../model/filter';
 import { useApi } from '../../../../shared/hooks/useApi';
 import { defaultValue, ToDosContext } from './ToDosContext';
 
@@ -10,6 +11,8 @@ export default function ToDosContextProvider({
 }) {
   const { makeRequest } = useApi();
   const [toDos, setToDos] = useState<ToDo[] | null>(defaultValue.toDos);
+  const [visibleToDos, setVisibleToDos] = useState<ToDo[] | null>(toDos);
+  const [selectedFilter, setSelectedFilter] = useState(Filter.All);
 
   useEffect(() => {
     makeRequest<ToDo[]>({
@@ -23,6 +26,10 @@ export default function ToDosContextProvider({
       value={{
         toDos,
         setToDos,
+        visibleToDos,
+        setVisibleToDos,
+        selectedFilter,
+        setSelectedFilter,
       }}
     >
       {children}
