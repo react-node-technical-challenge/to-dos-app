@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/46922193/230734963-40f2409a-f420-4fd4-9575-684dad30e0f1.gif" alt="alt text">
+  <img src="https://user-images.githubusercontent.com/46922193/230789281-5d290fcd-f81f-4ca9-ace8-b67e4a9ccdc2.gif" alt="alt text">
 </p>
 
 A lot of improvements could be done, both from the technical and product point of view, but should be enough for you to get a sense of how I code and structure things :)
